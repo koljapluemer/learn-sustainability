@@ -1,5 +1,5 @@
 <template>
-    <igu-cloze-reveal :num-clozes="1" @cloze-event="handleClozeEvent">
+    <igu-cloze-reveal :num-clozes="1" @cloze-event="handleClozeEvent" :key="currentClozeHtml">
         <span slot="cloze" v-html="currentClozeHtml"></span>
     </igu-cloze-reveal>
 </template>
