@@ -8,7 +8,6 @@
 import { ref, onMounted } from 'vue'
 import clozeData from './cloze.json'
 
-
 // Flatten the nested array of clozes
 const allClozes = clozeData.cloze.flat()
 const usedClozeIndices = new Set<number>()
@@ -18,9 +17,12 @@ const currentClozeGaps = ref<string[]>([])
 
 function transformClozeText(text: string): { html: string, gaps: string[] } {
     const gaps: string[] = []
-    const html = text.replace(/==([^=]+)==/g, (_, content) => {
-        gaps.push(content)
-        return `<span data-is-gap>${content}</span>`
+    // Using a more precise regex to handle multi-word expressions
+    const html = text.replace(/==([^=]+)==/g, (match, content) => {
+        // Trim to handle any accidental whitespace in the gaps
+        const trimmedContent = content.trim()
+        gaps.push(trimmedContent)
+        return `<span data-is-gap>${trimmedContent}</span>`
     })
     return { html, gaps }
 }
@@ -63,9 +65,8 @@ onMounted(() => {
     user-select: none;
 }
 
+/* light yellow background */
 .cloze-revealed {
-    border-radius: 3px;
-    font-weight: bold;
-    border-bottom: 2px solid #1976d2;
+    background-color: #fcf8e3;
 }
 </style>
