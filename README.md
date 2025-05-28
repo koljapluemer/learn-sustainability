@@ -1,6 +1,16 @@
 # Learn Sustainablity
 
 
+## Dev
+
+- Related repos:
+  - `igu-algos`, holding a sketch for the ts-type structure of learning data (not yet connected)
+  - `igu-learn-components`, holding web components for interaction modes. Integrated via `npm link` and used successfully (more or less).
+
+## Start
+
+- Reduce to [Planetary Boundaries](https://en.wikipedia.org/wiki/Planetary_boundaries)?
+
 ## Sources
 
 ### Used
