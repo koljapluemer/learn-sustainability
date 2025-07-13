@@ -1,5 +1,7 @@
 # Learn Sustainablity
 
+> [!NOTE]  
+> *Archived Prototype.*
 
 ## Dev
 
